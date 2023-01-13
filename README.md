@@ -12,6 +12,6 @@ Clone the project
   https://github.com/scm-ayeayethet/PHP.git
 ```
 
-##To run this project,
+To run this project,
 
 php -S localhost:3000
