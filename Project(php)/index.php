@@ -46,20 +46,17 @@
       <div class="form-group ">
         <label for="Email" class="mt-3">Email:</label>
         <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
-        <span class="text-danger"><?php if (isset($emailErr)) echo $emailErr; ?></span>
       </div>
 
       <div class="form-group ">
         <label for="password" class="mt-3">Password:</label>
         <input class="form-control" type="password" name="password" placeholder=" Enter Password" required>
-        <span class="text-danger"><?php if (isset($pwdErr)) echo $pwdErr; ?></span>
       </div>
 
       <div class="text-center">
         <button class="btn btn-success mt-3 mb-2" type="submit" name="login">Login</button>
         <a href="register_form.php">Register</a>
       </div>
-
     </form>
   </div>
 
