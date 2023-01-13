@@ -13,4 +13,5 @@ Clone the project
 ```
 
 ##To run this project,
- php -S localhost:3000
+
+php -S localhost:3000
