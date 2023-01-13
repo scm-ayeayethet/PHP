@@ -6,13 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/common.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
     .container-fluid {
       padding: 0;
@@ -33,15 +29,13 @@
 <body>
 
   <?php
-  // We need to use sessions, so you should always start sessions using the below code.
   session_start();
-  // If the user is not logged in redirect to the login page...
   if (!isset($_SESSION['loggedin'])) {
     header('Location: index.php');
     exit;
   }
   ?>
-  <div class="wrapper">
+  <div class="wrapper w-100">
     <div class="container-fluid">
       <div class="container">
         <nav class="navbar navbar-light justify-content-between">
@@ -55,7 +49,7 @@
 
   </div>
 
-  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

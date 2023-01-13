@@ -11,13 +11,14 @@ if (isset($_POST['login'])) {
   $query = "SELECT * FROM user WHERE email='$email' AND password='$password'";
   $result = $conn->query($query);
 
-  if ($result->num_rows > 0) {
+  if ($result->num_rows) {
 
     $_SESSION['loggedin'] = true;
     header('location: ./home.php');
-    
+
   } else {
-    header('location: ./index.php?message');
+    $_SESSION['loginErr'] = "Login Failed";
+    header('location: ./index.php');
   }
 }
 

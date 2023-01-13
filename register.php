@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include './database/connectDB.php';
 
 if (isset($_POST['register'])) {
@@ -13,9 +13,11 @@ if (isset($_POST['register'])) {
 
 		$conn->query($query);
 
-		header('location: index.php?msg');
+		$_SESSION['registerSucc'] = "Successfully registered!!!";
+		header('location: index.php');
 
 	} else {
-		header('location: ./register_form.php?message');
+		$_SESSION['registerErr'] = "Please Enter Your Info correctly!!!";
+		header('location: ./register_form.php');
 	}
 }

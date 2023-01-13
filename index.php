@@ -6,12 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/common.css">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     .container {
       width: 35%;
     }
@@ -26,20 +23,22 @@
 
   <div class="container card mt-5 py-3 shadow-sm">
     <?php
-    if (isset($_GET['message'])) {
+    session_start();
+
+    if (isset($_SESSION['loginErr'])) :
     ?>
       <div class="alert alert-danger" role="alert">
-        <?php echo "Login Failed!!!";
+        <?php echo $_SESSION['loginErr'];
         ?>
       </div>
-    <?php } ?>
+    <?php endif ?>
     <?php
-    if (isset($_GET['msg'])) {
+    if (isset($_SESSION['registerSucc'])) :
     ?>
       <div class="alert alert-success" role="alert">
-        <?php echo "Registration is successfully!!"; ?>
+        <?php echo $_SESSION['registerSucc']; ?>
       </div>
-    <?php } ?>
+    <?php endif ?>
     <h3>Login</h3>
     <form action="login.php" method="post" class="form">
 
@@ -60,7 +59,7 @@
     </form>
   </div>
 
-  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
