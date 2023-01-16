@@ -34,10 +34,30 @@
 
     <h2>Register</h2>
     <form action="register.php" method="post">
-      <input class="form-control mt-3" type="text" name="name" placeholder="Name" required>
-      <input class="form-control mt-3" type="email" name="email" placeholder="Email" required>
-      <input class="form-control mt-3" type="password" name="password" placeholder="Password" required>
-      <input class="form-control mt-3" type="password" name="confirmPwd" placeholder="Confirm Password" required>
+      <div class="form-group">
+        <label for="Name" class="mt-3">Name:</label>
+        <input class="form-control" type="text" name="name" placeholder="Name">
+        <span class="text-danger"><?php if (isset($_SESSION['nameErr'])) echo $_SESSION['nameErr']; ?></span>
+      </div>
+
+      <div class="form-group">
+        <label for="Email" class="mt-3">Email:</label>
+        <input class="form-control" type="email" name="email" placeholder="Email">
+        <span class="text-danger"><?php if (isset($_SESSION['emailErr'])) echo $_SESSION['emailErr']; ?></span>
+      </div>
+      
+      <div class="form-group">
+        <label for="Password" class="mt-3">Password:</label>
+        <input class="form-control" type="password" name="password" placeholder="Password">
+        <span class="text-danger"><?php if (isset($_SESSION['pwdErr'])) echo $_SESSION['pwdErr']; ?></span>
+      </div>
+
+      <div class="form-group">
+        <label for="Confirm Password" class="mt-3">Confirm Password:</label>
+        <input class="form-control" type="password" name="confirmPwd" placeholder="Confirm Password">
+        <span class="text-danger"><?php if (isset($_SESSION['confirmPwdErr'])) echo $_SESSION['confirmPwdErr']; ?></span>
+      </div>
+      
       <div class="text-center">
         <button class="btn btn-success mt-3 mb-2" type="submit" name="register">Register</button>
       </div>

@@ -42,14 +42,16 @@
     <h3>Login</h3>
     <form action="login.php" method="post" class="form">
 
-      <div class="form-group ">
+      <div class="form-group">
         <label for="Email" class="mt-3">Email:</label>
-        <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
+        <input class="form-control" type="text" name="email" placeholder="Enter Email" >
+        <span class="text-danger"><?php if (isset($_SESSION['emailErr'])) echo $_SESSION['emailErr']; ?></span>
       </div>
 
-      <div class="form-group ">
+      <div class="form-group">
         <label for="password" class="mt-3">Password:</label>
-        <input class="form-control" type="password" name="password" placeholder=" Enter Password" required>
+        <input class="form-control" type="password" name="password" placeholder=" Enter Password" >
+        <span class="text-danger"><?php if (isset($_SESSION['passwordErr'])) echo $_SESSION['passwordErr']; ?></span>
       </div>
 
       <div class="text-center">
