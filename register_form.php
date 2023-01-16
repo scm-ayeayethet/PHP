@@ -15,6 +15,21 @@
 
   <?php
   session_start();
+
+  if (isset($_SESSION['emailErr'])) {
+    unset($_SESSION['emailErr']);
+  }
+  if (isset($_SESSION['passwordErr'])) {
+    unset($_SESSION['passwordErr']);
+  }
+  
+  if (isset($_SESSION['loginErr'])) {
+    unset($_SESSION['loginErr']);
+  }
+  if (isset($_SESSION['registerSucc'])) {
+    unset($_SESSION['registerSucc']);
+  }
+
   if (isset($_SESSION['loggedin'])) {
     header('Location: home.php');
     exit;
@@ -43,9 +58,9 @@
       <div class="form-group">
         <label for="Email" class="mt-3">Email:</label>
         <input class="form-control" type="email" name="email" placeholder="Email">
-        <span class="text-danger"><?php if (isset($_SESSION['emailErr'])) echo $_SESSION['emailErr']; ?></span>
+        <span class="text-danger"><?php if (isset($_SESSION['emailRegErr'])) echo $_SESSION['emailRegErr']; ?></span>
       </div>
-      
+
       <div class="form-group">
         <label for="Password" class="mt-3">Password:</label>
         <input class="form-control" type="password" name="password" placeholder="Password">
@@ -57,7 +72,7 @@
         <input class="form-control" type="password" name="confirmPwd" placeholder="Confirm Password">
         <span class="text-danger"><?php if (isset($_SESSION['confirmPwdErr'])) echo $_SESSION['confirmPwdErr']; ?></span>
       </div>
-      
+
       <div class="text-center">
         <button class="btn btn-success mt-3 mb-2" type="submit" name="register">Register</button>
       </div>

@@ -5,15 +5,15 @@ include './database/connectDB.php';
 if (isset($_POST['register'])) {
 
 	if (empty($_POST["name"])) {
-		$_SESSION['nameErr'] = "Name is required";
+		$_SESSION['nameErr'] = "Name is required";		
 	}
 
 	if (empty($_POST["email"])) {
-		$_SESSION['emailErr'] = "Email is required";
+		$_SESSION['emailRegErr'] = "Email is required";
 	} else {
 		$email = $_POST["email"];
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$_SESSION['emailErr'] = "Invalid email format";
+			$_SESSION['emailRegErr'] = "Invalid email format";
 		}
 	}
 

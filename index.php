@@ -25,6 +25,22 @@
     <?php
     session_start();
 
+    if (isset($_SESSION['nameErr'])) {
+      unset($_SESSION['nameErr']);
+    }
+    if (isset($_SESSION['emailRegErr'])) {
+      unset($_SESSION['emailRegErr']);
+    }
+    if (isset($_SESSION['pwdErr'])) {
+      unset($_SESSION['pwdErr']);
+    }
+    if (isset($_SESSION['confirmPwdErr'])) {
+      unset($_SESSION['confirmPwdErr']);
+    }
+    if (isset($_SESSION['registerErr'])) {
+      unset($_SESSION['registerErr']);
+    }
+
     if (isset($_SESSION['loginErr'])) :
     ?>
       <div class="alert alert-danger" role="alert">
